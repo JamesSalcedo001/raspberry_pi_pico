@@ -29,3 +29,8 @@ else:
     print('Failed to connect.')
 
 astronauts = urequests.get("http://api.open-notify.org/astros.json").json()
+
+number = astronauts["number"]
+
+for i in range(number):
+    print(astronauts['people'][i]['name'])
