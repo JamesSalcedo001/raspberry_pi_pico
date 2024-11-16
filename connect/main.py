@@ -2,7 +2,7 @@
 import network
 import time
 from secrets import SSID, PASSWORD
-
+import urequests
 
 
 # create an object to create connection from code to Pico wireless chip
@@ -27,3 +27,5 @@ if wlan.isconnected():
     print('Connected successfully!')
 else:
     print('Failed to connect.')
+
+astronauts = urequests.get("http://api.open-notify.org/astros.json").json()
