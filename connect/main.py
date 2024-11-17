@@ -1,6 +1,8 @@
 # connect to wifi network
 import network
 import time
+
+# import urequests module, enables one to work with network requests such as HTTP and JSON
 from secrets import SSID, PASSWORD
 import urequests
 
@@ -28,6 +30,7 @@ if wlan.isconnected():
 else:
     print('Failed to connect.')
 
+# create astronaut object and use urequests to get info in JSON format
 astronauts = urequests.get("http://api.open-notify.org/astros.json").json()
 
 number = astronauts["number"]
